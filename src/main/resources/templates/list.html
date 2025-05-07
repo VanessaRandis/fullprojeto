@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/user/create">Cadastro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/list">Listagem</a>
+            </li>
+            
+          </ul>
+         
+        </div>
+      </div>
+    </nav>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Username</th>
+          <th scope="col">Email</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">#</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-th-each="userModel : ${userModel}">
+          <td data-th-text="${userModel.id}"></td>
+          <td data-th-text="${userModel.nome}"></td>
+          <td data-th-text="${userModel.username}"></td>
+          <td data-th-text="${userModel.email}"></td>
+          <td data-th-text="${userModel.telefone}"></td>
+          <td>
+            <a th:href="@{'/edit/'+${userModel.id}}" >Editar</a>
+          </td>
+        </tr>
+       
+      </tbody>
+    </table>
+  
+  </body>
+</html>
